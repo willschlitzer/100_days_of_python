@@ -37,6 +37,12 @@ def convert_to_datetime(line):
         start_pos = 8
     end_pos = start_pos + date_length
     date_string = line[start_pos:end_pos]
+    year = int(date_string[0:4])
+    month = int(date_string[5:7])
+    day = int(date_string[8:10])
+    hour = int(date_string[11:13])
+    minute = int(date_string[14:16])
+    second = int(date_string[17:19])
 
 
 def time_between_shutdowns(loglines):
