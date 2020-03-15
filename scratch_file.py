@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 
 def showDateInts():
@@ -10,7 +10,7 @@ def showDateInts():
     print(todaydate.year)
 
 
-def createDate():
+def dateMath():
     """Shows how math can be done with date variables"""
     # Assigns date object using only day month year
     todaydate = date.today()
@@ -18,13 +18,34 @@ def createDate():
     christmas = date(2020, 12, 25)
     # Completes subtraction between the two dates
     # .days method returns only subtraction using days
-    christmas_days = ((christmas - todaydate).days)
+    christmas_days = (christmas - todaydate).days
     if christmas is not todaydate:
-        print("There are still " + str(christmas_days) + " days until Christmas!" )
+        print("There are still " + str(christmas_days) + " days until Christmas!")
     else:
         print("Today is Christmas!")
 
 
+def exploreTimeDelta():
+    """Create timedelta object and add it to date object"""
+    t = timedelta(days=4, hours=10)
+    eta = timedelta(hours=6)
+    today = datetime.today()
+    # Shows additions of the timedelta to a date object
+    print(eta)
+    print(today + t)
+
+
+def countdownSubtraction():
+    end = datetime(2020, 6, 18, 18, 30, 0, 0)
+    rightnow = datetime.today()
+    togo = end - rightnow
+    print(togo)
+    print(type(togo))
+    print(togo.days)
+
+
 # print(datetime.today())
 # showDateInts()
-createDate()
+# dateMath()
+exploreTimeDelta()
+# countdownSubtraction()
