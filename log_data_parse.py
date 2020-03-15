@@ -28,7 +28,15 @@ def convert_to_datetime(line):
        returns:
        datetime(2014, 7, 3, 23, 27, 51)
     """
-    pass
+    date_length = 19
+    if line[0:5] == "ERROR":
+        start_pos = 6
+    elif line[0:4] == "INFO":
+        start_pos = 5
+    elif line[0:7] == "WARNING":
+        start_pos = 8
+    end_pos = start_pos + date_length
+    date_string = line[start_pos:end_pos]
 
 
 def time_between_shutdowns(loglines):
@@ -40,6 +48,7 @@ def time_between_shutdowns(loglines):
     shutdowns = []
     for line in loglines:
         if SHUTDOWN_EVENT in line:
-            pass
+            shutdown = convert_to_datetime()
+            shutdowns.append(shutdown)
 
-    pass
+
