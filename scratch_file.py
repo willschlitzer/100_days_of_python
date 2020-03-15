@@ -49,6 +49,7 @@ def elapsedPercentCalc():
     totaltime = end - start
     right_now = datetime.today()
     completedtime = right_now - start
+    print(type(completedtime))
     print(completedtime/totaltime)
 
 # print(datetime.today())
