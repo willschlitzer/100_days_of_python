@@ -69,10 +69,12 @@ def test_timedelta_inputs():
     '''Test different inputs for timedelta'''
     a = timedelta(minutes=5)
     b = timedelta(hours=10)
+    print(a.seconds)
 
 def test_date_string():
-    mydate = datetime.strptime(10 Aug 2020, %d )
-    print(mydate)
+    #mydate = datetime.strptime(10 Aug 2020, %d )
+    #print(mydate)
+    pass
 
 
 # print(datetime.today())
@@ -82,5 +84,5 @@ def test_date_string():
 # countdownSubtraction()
 # elapsedPercentCalc()
 #test_timedelta_running()
-#test_timedelta_inputs()
+test_timedelta_inputs()
 #test_date_string()
