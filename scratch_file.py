@@ -1,5 +1,4 @@
 from datetime import datetime, date, timedelta
-import datetime
 
 
 def showDateInts():
@@ -56,7 +55,7 @@ def elapsedPercentCalc():
 
 
 def test_timedelta_running():
-    '''Test to see that a timedelta object is viewed the same as a subtraction of two values'''
+    """Test to see that a timedelta object is viewed the same as a subtraction of two values"""
     end = timedelta(seconds=10)
     start = datetime.today()
     running = True
@@ -65,16 +64,18 @@ def test_timedelta_running():
             print("Time's Up")
             running = False
 
+
 def test_timedelta_inputs():
-    '''Test different inputs for timedelta'''
+    """Test different inputs for timedelta"""
     a = timedelta(minutes=5)
     b = timedelta(hours=10)
     print(a.seconds)
 
+
 def test_date_string():
-    #mydate = datetime.strptime(10 Aug 2020, %d )
-    #print(mydate)
-    pass
+    """Creating test for using strptime method"""
+    mydate = datetime.strptime("10 Aug, 2020", "%d %b, %Y")
+    print(mydate)
 
 
 # print(datetime.today())
@@ -83,6 +84,6 @@ def test_date_string():
 # exploreTimeDelta()
 # countdownSubtraction()
 # elapsedPercentCalc()
-#test_timedelta_running()
-test_timedelta_inputs()
-#test_date_string()
+# test_timedelta_running()
+# test_timedelta_inputs()
+test_date_string()
