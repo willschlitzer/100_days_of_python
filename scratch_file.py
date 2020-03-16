@@ -43,6 +43,7 @@ def countdownSubtraction():
     print(type(togo))
     print(togo.days)
 
+
 def elapsedPercentCalc():
     end = datetime(2020, 6, 18, 18, 30, 0, 0)
     start = datetime(2020, 1, 11, 11, 43, 0, 0)
@@ -50,11 +51,12 @@ def elapsedPercentCalc():
     right_now = datetime.today()
     completedtime = right_now - start
     print(type(completedtime))
-    print(completedtime/totaltime)
+    print(completedtime / totaltime)
+
 
 # print(datetime.today())
 # showDateInts()
 # dateMath()
-#exploreTimeDelta()
+# exploreTimeDelta()
 # countdownSubtraction()
 elapsedPercentCalc()

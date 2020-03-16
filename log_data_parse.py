@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import urllib.request
 
@@ -21,8 +21,7 @@ with open(logfile) as f:
 
 
 def convert_to_datetime(line):
-    """TODO 1:
-       Extract timestamp from logline and convert it to a datetime object.
+    """Extract timestamp from logline and convert it to a datetime object.
        For example calling the function with:
        INFO 2014-07-03T23:27:51 supybot Shutdown complete.
        returns:
@@ -43,18 +42,24 @@ def convert_to_datetime(line):
     hour = int(date_string[11:13])
     minute = int(date_string[14:16])
     second = int(date_string[17:19])
+    return datetime(year, month, day, hour, minute, second)
 
 
 def time_between_shutdowns(loglines):
-    """TODO 2:
-       Extract shutdown events ("Shutdown initiated") from loglines and
+    """Extract shutdown events ("Shutdown initiated") from loglines and
        calculate the timedelta between the first and last one.
        Return this datetime.timedelta object.
     """
     shutdowns = []
     for line in loglines:
         if SHUTDOWN_EVENT in line:
-            shutdown = convert_to_datetime()
+            shutdown = convert_to_datetime(line)
             shutdowns.append(shutdown)
+    first_shutdown = shutdowns[0]
+    last_shutdown = shutdowns[-1]
+    return last_shutdown - first_shutdown
 
 
+if __name__ == "__main__":
+    shutdown_time = time_between_shutdowns(loglines)
+    print(shutdown_time)
