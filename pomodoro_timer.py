@@ -10,6 +10,7 @@ long_break = timedelta(minutes=30)
 # How many pomodoros happen until a long break
 pom_nums = 4
 
+
 def run_timer():
     start = datetime.today()
     pom_count = 0
@@ -18,7 +19,12 @@ def run_timer():
         if elapsed >= task_length:
             pom_count = run_break(pom_count)
             start = datetime.today()
-        
+        else:
+            if (elapsed.seconds % 60) == 0:
+                remaining_time = (break_length.seconds - break_elapsed.seconds) / 60
+                print(str(remaining_time) + " minutes remaining on your task!")
+                sleep(50)
+
 
 def run_break(pom_count):
     if pom_count >= pom_nums:
@@ -35,7 +41,12 @@ def run_break(pom_count):
             return pom_count
         else:
             if (break_elapsed.seconds % 60) == 0:
-                remaining_time = (break_length.seconds - break_elapsed.seconds)/60
-                print(str(remaining_time) + " minutes remaining on your break!")
+                break_remaining_time = (
+                    break_length.seconds - break_elapsed.seconds
+                ) / 60
+                print(str(break_remaining_time) + " minutes remaining on your break!")
                 sleep(50)
 
+
+if __name__ == "__main__":
+    run_timer()
