@@ -54,9 +54,25 @@ def elapsedPercentCalc():
     print(completedtime / totaltime)
 
 
+def test_timedelta_running():
+    end = timedelta(seconds=10)
+    start = datetime.today()
+    running = True
+    while running:
+        if (datetime.today() - start) == end:
+            print("Time's Up")
+            running = False
+
+def test_timedelta_inputs():
+    a = timedelta(minutes=5)
+    b = timedelta(hours=10)
+
+
 # print(datetime.today())
 # showDateInts()
 # dateMath()
 # exploreTimeDelta()
 # countdownSubtraction()
-elapsedPercentCalc()
+# elapsedPercentCalc()
+#test_timedelta_running()
+test_timedelta_inputs()
