@@ -1,6 +1,7 @@
 from collections import defaultdict, namedtuple, Counter, deque
 from timeit import timeit
 import random
+import csv
 
 
 def createNamedTuple():
@@ -30,7 +31,11 @@ def createDefaultDict():
         missions[name].append(mission)
     print(missions)
 
-#def demoCounter():
+def demoCounter():
+    with open("Ground_Speed_Check.txt", "r") as f:
+        story = f.read().split()
+    print(Counter(story).most_common(25))
 
 # print(timeit("createNamedTuple()", setup="from __main__ import createNamedTuple", number=100))
-createDefaultDict()
+#createDefaultDict()
+demoCounter()
