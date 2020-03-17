@@ -76,6 +76,9 @@ def test_date_string():
     """Creating test for using strptime method"""
     mydate = datetime.strptime("10 Aug, 2020", "%d %b, %Y")
     print(mydate)
+    datestring = datetime.strftime(mydate, "%B %d, %Y")
+    print(datestring)
+
 
 
 # print(datetime.today())
