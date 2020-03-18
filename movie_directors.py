@@ -34,8 +34,8 @@ def get_movies_by_director(data=movies_csv):
 directors = get_movies_by_director()
 print(len(directors['Christopher Nolan']))
 
-cnt = Counter
+cnt = Counter()
 for director, movies in directors.items():
     cnt[director] += len(movies)
 
-#print(cnt.most_common(10))
+print(cnt.most_common(10))
