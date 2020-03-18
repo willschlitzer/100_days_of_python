@@ -31,13 +31,13 @@ def get_movies_by_director(data=movies_csv):
             directors[director].append(m)
     return directors
 
-directors = get_movies_by_director()
-print(len(directors['Christopher Nolan']))
+if __name__ == "__main__":
+    directors = get_movies_by_director()
+    print(len(directors['Christopher Nolan']))
+    # Creates a counter object
+    cnt = Counter()
+    # Counts the movies for each director by looking at the length of the associated values for a given director
+    for director, movies in directors.items():
+        cnt[director] += len(movies)
 
-# Creates a counter object
-cnt = Counter()
-# Counts the movies for each director by looking at the length of the associated values for a given director
-for director, movies in directors.items():
-    cnt[director] += len(movies)
-
-print(cnt.most_common(10))
+    print(cnt.most_common(10))
