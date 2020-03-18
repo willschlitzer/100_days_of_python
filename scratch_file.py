@@ -36,6 +36,17 @@ def demoCounter():
         story = f.read().split()
     print(Counter(story).most_common(25))
 
+def demoDeque():
+    """Demo to show the difference between deques and lists"""
+    # Specifies max length for deque object
+    # Default is no max length
+    mydeque = deque(range(25), 25)
+    print(mydeque)
+    # Appending at the end of the deque removes the first value
+    mydeque.append(100)
+    print(mydeque)
+
 # print(timeit("createNamedTuple()", setup="from __main__ import createNamedTuple", number=100))
 #createDefaultDict()
-demoCounter()
+#demoCounter()
+demoDeque()
