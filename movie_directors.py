@@ -34,7 +34,9 @@ def get_movies_by_director(data=movies_csv):
 directors = get_movies_by_director()
 print(len(directors['Christopher Nolan']))
 
+# Creates a counter object
 cnt = Counter()
+# Counts the movies for each director by looking at the length of the associated values for a given director
 for director, movies in directors.items():
     cnt[director] += len(movies)
 
