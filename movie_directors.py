@@ -1,6 +1,5 @@
 from collections import defaultdict, namedtuple, Counter, deque
 import csv
-# import random
 from urllib.request import urlretrieve
 
 # Retrieves movie data from source; saves as CSV
@@ -15,13 +14,13 @@ def get_movies_by_director(data=movies_csv):
     "Extracts the movies from the CSV file and stores them in a dictionary"
     # Creates ordered dictionary
     directors = defaultdict(list)
-    with open(data, encoding='utf-8') as f:
+    with open(data, encoding="utf-8") as f:
         for line in csv.DictReader(f):
             try:
-                director = line['director_name']
-                movie = line['movie_title'].replace('\xa0', '')
-                year = int(line['title_year'])
-                score = float(line['imdb_score'])
+                director = line["director_name"]
+                movie = line["movie_title"].replace("\xa0", "")
+                year = int(line["title_year"])
+                score = float(line["imdb_score"])
             # Corrects for missing info
             except ValueError:
                 continue
@@ -31,9 +30,10 @@ def get_movies_by_director(data=movies_csv):
             directors[director].append(m)
     return directors
 
+
 if __name__ == "__main__":
     directors = get_movies_by_director()
-    print(len(directors['Christopher Nolan']))
+    print(len(directors["Christopher Nolan"]))
     # Creates a counter object
     cnt = Counter()
     # Counts the movies for each director by looking at the length of the associated values for a given director

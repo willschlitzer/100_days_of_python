@@ -1,27 +1,33 @@
-from movie_directors import Movie, movie_data, movies_csv, get_movies_by_director
-from collections import defaultdict, namedtuple, Counter, deque
-import csv
-# import random
-from urllib.request import urlretrieve
+from movie_directors import get_movies_by_director
+from collections import Counter
 from statistics import mean
 
 
-urlretrieve(movie_data, movies_csv)
-
 def find_highest(directors):
-    cnt = Counter()
-    director_rating = defaultdict(list)
+    """Find the highest-rated directors and print their names, scores, and films."""
+    director_rating = {}
     # Counts the movies for each director by looking at the length of the associated values for a given director
     for director, movies in directors.items():
         if len(movies) >= 4:
             scores_list = []
             for movie in directors[director]:
-                scores_list.append(movie.score)
-            director_rating[director] = mean(scores_list)
-    print(Counter(director_rating).most_common(10))
+                if movie.year >= 1960:
+                    scores_list.append(movie.score)
+            # Creates a dictionary with keys of the director name and their average scores
+            director_rating[director] = round(mean(scores_list), 2)
+    # Determines the directors with the highest average scores
+    pop_directs = Counter(director_rating).most_common(5)
+    for x in pop_directs:
+        director = x[0]
+        av_score = x[1]
+        print(director + " " + str(av_score))
+        print("____________________________________")
+        for movie in directors[director]:
+            # prints each of a director's films and the associated score
+            print(movie.title + " " + str(movie.score))
+        print("\n\n")
+
 
 if __name__ == "__main__":
     directors = get_movies_by_director()
     find_highest(directors)
-    #print(directors)
-
