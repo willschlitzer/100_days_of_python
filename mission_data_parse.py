@@ -1,4 +1,4 @@
-from collections import defaultdict, namedtuple, Counter, deque
+from collections import defaultdict, namedtuple, Counter
 import csv
 
 mission_data = "apollo_data.csv"
