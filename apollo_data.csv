@@ -1,0 +1,12 @@
+name,start_date,end_date,crew,lunar_orbit,lunar_landing
+Apollo 7,11-10-1968,22-10-1968,"Walter Schirra, Donn Eisele, Walter Cunningham",0,0
+Apollo 8,21-12-1968,27-12-1968,"Frank Borman, James Lovell, William Anders",1,0
+Apollo 9,3-3-1969,13-3-1969,"James McDivitt, David Scott, Russell Schweickart",0,0
+Apollo 10,18-5-1969,26-5-1969,"Thomass Stafford, John Young, Eugene Cernan",1,0
+Apollo 11,16-7-1969,24-7-1969,"Neil Armstrong, Buzz Aldrin, Michael Collins",1,1
+Apollo 12,14-11-1969,24-11-1969,"Pete Congrad, Richard Gordon, Alan Bean",1,1
+Apollo 13,11-4-1970,17-4-1970,"James Lovell, Fred Haise, John Swigert",1,0
+Apollo 14,31-1-1971,9-2-1971,"Alan Shepard, Stuart Roosa, Edgar Mitchell",1,1
+Apollo 15,26-7-1971,7-8-1971,"David Scott, Alfred Worden, James Irwin",1,1
+Apollo 16,16-4-1972,27-4-1972,"John Young, Charles Duke, Ken Mattingly",1,1
+Apollo 17,7-12-1972,19-12-1972,"Eugene Cernan, Ronald Evans, Harrison Schmitt",1,1
