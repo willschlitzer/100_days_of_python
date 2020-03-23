@@ -25,27 +25,31 @@ def list_insert():
     string_list.insert(4, "b")
     print(string_list)
 
+
 def list_replace():
     string_list = list("mystring")
     string_list[0] = "b"
     print(string_list)
+
 
 def list_delete():
     string_list = list("mystring")
     del string_list[0]
     print(string_list)
 
+
 def dict_scratch():
-    office = {'nate':34, 'will':30, 'sadi': 23}
-    office['hoa'] = 29
+    office = {"nate": 34, "will": 30, "sadi": 23}
+    office["hoa"] = 29
     # print entire dictionary
     print(office)
     # Creates tuple of keys, values
     print(office.items())
     # Print just the keys
-    #print(office.keys())
+    # print(office.keys())
     # Print just the values
-    #print(office.values())
+    # print(office.values())
+
+
 if __name__ == "__main__":
     dict_scratch()
-
