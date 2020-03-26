@@ -18,7 +18,7 @@ class Dragon(Creature):
     def defensive_roll(self):
         roll = super().defensive_roll()
         value =  roll * self.scaliness
-        if self.breaths_fire:
+        if self.breathes_fire:
             value = value * 2
         return value
 
