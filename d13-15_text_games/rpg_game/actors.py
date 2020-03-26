@@ -10,10 +10,10 @@ class Creature:
         return roll * self.level
 
 class Dragon(Creature):
-    def __init__(self, name, level, scaliness, breaths_fire):
+    def __init__(self, name, level, scaliness, breathes_fire):
         super().__init__(name, level)
         self.scaliness = scaliness
-        self.breaths_fire = breaths_fire
+        self.breathes_fire = breathes_fire
 
     def defensive_roll(self):
         roll = super().defensive_roll()
