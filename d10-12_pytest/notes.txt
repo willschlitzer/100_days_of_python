@@ -1,0 +1,2 @@
+# How to run for pytest coverage for entire directory in the CLI
+pytest --cov-report term-missing --cov='.'
