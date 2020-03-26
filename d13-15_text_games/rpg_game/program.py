@@ -22,6 +22,16 @@ def game_loop():
     while True:
         # randomly choose a creature
         active_creature = random.choice(creatures)
+        print("A {} of level {} has appeared".format(active_creature.name, active_creature.level))
+        cmd = input("Do you [a] attack, [r]unaway, or [l]ook around?")
+        if cmd == 'a':
+            # TODO attack
+            pass
+        elif cmd == 'r':
+            print("{} flees!".format(hero.name))
+        elif cmd == 'l':
+            print("{} looks around and sees:".format(hero.name))
+
 
 if __name__ == "__main__":
     main()
