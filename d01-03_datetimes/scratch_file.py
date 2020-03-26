@@ -80,7 +80,6 @@ def test_date_string():
     print(datestring)
 
 
-
 # print(datetime.today())
 # showDateInts()
 # dateMath()
@@ -89,4 +88,4 @@ exploreTimeDelta()
 # elapsedPercentCalc()
 # test_timedelta_running()
 # test_timedelta_inputs()
-#test_date_string()
+# test_date_string()

@@ -6,6 +6,7 @@ class Player:
     def add_win(self):
         self.score += 1
 
+
 class Roll:
     def __init__(self, roll_name, wins, losses):
         self.roll_name = roll_name

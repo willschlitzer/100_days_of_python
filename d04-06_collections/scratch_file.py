@@ -31,10 +31,12 @@ def createDefaultDict():
         missions[name].append(mission)
     print(missions)
 
+
 def demoCounter():
     with open("Ground_Speed_Check.txt", "r") as f:
         story = f.read().split()
     print(Counter(story).most_common(25))
+
 
 def demoDeque():
     """Demo to show the difference between deques and lists"""
@@ -46,7 +48,8 @@ def demoDeque():
     mydeque.append(100)
     print(mydeque)
 
+
 # print(timeit("createNamedTuple()", setup="from __main__ import createNamedTuple", number=100))
-#createDefaultDict()
-#demoCounter()
+# createDefaultDict()
+# demoCounter()
 demoDeque()

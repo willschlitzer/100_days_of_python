@@ -1,13 +1,15 @@
 import random
 
+
 class Creature:
     def __init__(self, name, level):
         self.name = name
         self.level = level
 
     def defensive_roll(self):
-        roll = random.randint(1,12)
+        roll = random.randint(1, 12)
         return roll * self.level
+
 
 class Dragon(Creature):
     def __init__(self, name, level, scaliness, breathes_fire):
@@ -17,10 +19,11 @@ class Dragon(Creature):
 
     def defensive_roll(self):
         roll = super().defensive_roll()
-        value =  roll * self.scaliness
+        value = roll * self.scaliness
         if self.breathes_fire:
             value = value * 2
         return value
+
 
 class Wizard(Creature):
     def attack(self, creature):

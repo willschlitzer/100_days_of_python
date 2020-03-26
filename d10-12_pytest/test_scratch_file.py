@@ -15,6 +15,7 @@ def test_get_random_number(m):
     # Conducts test
     assert get_random_number() == 12
 
+
 def test_fizzbuz_input():
     assert fizzbuz_input(1) == 1
     assert fizzbuz_input(3) == "Fizz"

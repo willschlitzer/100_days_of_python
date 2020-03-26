@@ -1,7 +1,8 @@
 import csv
 
+
 def read_rolls():
-    with open('battle-table.csv') as fin:
+    with open("battle-table.csv") as fin:
         reader = csv.DictReader(fin)
         result_dict = {}
         for row in reader:
@@ -11,20 +12,21 @@ def read_rolls():
 
 
 def read_roll(row: dict):
-    name = row['Attacker']
-    del row['Attacker']
+    name = row["Attacker"]
+    del row["Attacker"]
     del row[name]
     wins = []
     losses = []
-    #print("Roll: {}".format(name))
+    # print("Roll: {}".format(name))
     for k in row.keys():
         result = row[k].strip().lower()
-        #can_defeat = row[k].strip().lower() == 'win'
-        #print(" * {} will defeat {}? {}".format(name, k, can_defeat))
-        if result == 'win':
+        # can_defeat = row[k].strip().lower() == 'win'
+        # print(" * {} will defeat {}? {}".format(name, k, can_defeat))
+        if result == "win":
             wins.append(k.lower())
         else:
             losses.append(k.lower())
     return name.lower(), wins, losses
+
 
 read_rolls()
