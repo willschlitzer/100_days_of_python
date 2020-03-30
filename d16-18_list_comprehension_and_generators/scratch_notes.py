@@ -16,6 +16,7 @@ def name_loop():
 def list_compression():
     names = ['will', 'john', 'julie', 'nick', 'andrew', 'ryan']
     first_half_alphabet = list(string.ascii_lowercase)[:13]
+    print([name for name in names])
     # uses list comprehension
     print([name for name in names if name[0] in first_half_alphabet])
 
