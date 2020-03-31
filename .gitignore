@@ -139,3 +139,5 @@ Ground_Speed_Check.txt
 /test_states.py
 
 /d13-15_text_games/sample_reader.py
+/d16-18_list_comprehension_and_generators/test_names.py
+/d16-18_list_comprehension_and_generators/test_exclude.py
