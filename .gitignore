@@ -141,3 +141,4 @@ Ground_Speed_Check.txt
 /d13-15_text_games/sample_reader.py
 /d16-18_list_comprehension_and_generators/test_names.py
 /d16-18_list_comprehension_and_generators/test_exclude.py
+/d19-21_itertools/words_alpha.txt
