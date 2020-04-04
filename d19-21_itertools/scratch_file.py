@@ -22,7 +22,7 @@ def product():
 def perm_com():
     people = "will nick nate".split()
     print(list(itertools.combinations(people, r=2)))
-    print(list(itertools.permutations(people, r=3)))
+    print(list(itertools.permutations(people, r=2)))
 
 
 if __name__ == "__main__":

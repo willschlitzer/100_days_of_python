@@ -8,6 +8,7 @@ with open(wordfile, "r") as f:
 
 def find_anagrams(word, wordlist=wordlist):
     word_perms = list(permutations(word))
+    print(len(word_perms))
     anagram_list = []
     for perm in word_perms:
         perm_word = "".join(perm).lower()
@@ -20,5 +21,5 @@ def find_anagrams(word, wordlist=wordlist):
     print(anagram_list)
 
 
-word = "pale"
+word = "a"
 find_anagrams(word=word)
