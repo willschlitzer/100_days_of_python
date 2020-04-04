@@ -6,8 +6,9 @@ confirmed = [False, True, True, False, True]
 
 
 def get_attendees():
-    for participant in zip(names, locations, confirmed):
+    for participant in itertools.zip_longest(names, locations, confirmed, fillvalue='-'):
         print(participant)
+
 
 if __name__ == '__main__':
     get_attendees()
