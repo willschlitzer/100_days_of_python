@@ -143,3 +143,4 @@ Ground_Speed_Check.txt
 /d16-18_list_comprehension_and_generators/test_exclude.py
 /d19-21_itertools/words_alpha.txt
 /d19-21_itertools/test_event.py
+/d19-21_itertools/test_friends.py
