@@ -144,3 +144,4 @@ Ground_Speed_Check.txt
 /d19-21_itertools/words_alpha.txt
 /d19-21_itertools/test_event.py
 /d19-21_itertools/test_friends.py
+/d22-25_decorators/test_decorators.py

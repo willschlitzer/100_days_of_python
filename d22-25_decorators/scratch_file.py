@@ -1,9 +1,9 @@
 # How to write a decorate
 from functools import wraps
-import time
+
 
 def mydecorator(function):
-    @wraps(functions)
+    @wraps(function)
     def wrapper(*args, **kwargs):
         # do something before the original function is called
         # it's called the passed in function
@@ -15,3 +15,6 @@ def mydecorator(function):
 @mydecorator
 def my_function(args):
     pass
+
+# args takes arbitrary number of arguments and treats it like a list
+# kwargs takes key, value pairs and treats as dictionary
