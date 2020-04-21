@@ -13,12 +13,16 @@ def astros_query():
         print("No network connection with API")
 
 def astros_name_parse(astro_data):
-    astronauts = astro_data['people']
-    astro_list = []
-    for astronaut in astronauts:
-        name = astronaut['name']
-        astro_list.append(name)
-    return astro_list
+    try:
+        astronauts = astro_data['people']
+        astro_list = []
+        for astronaut in astronauts:
+            name = astronaut['name']
+            astro_list.append(name)
+        return astro_list
+    except TypeError:
+        print("No data to read")
+
 
 def search_names(name_list):
     name_search = input("What is the name you are searching? ")

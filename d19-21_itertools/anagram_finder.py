@@ -1,10 +1,13 @@
 from itertools import permutations
 
-wordfile = "words_alpha.txt"
+wordfile = "words_apha.txt"
 
-with open(wordfile, "r") as f:
-    wordlist = f.read().splitlines()
-
+try:
+    with open(wordfile, "r") as f:
+        wordlist = f.read().splitlines()
+except FileNotFoundError:
+    print("Confirm file name")
+    wordlist = []
 
 def find_anagrams(word, wordlist=wordlist):
     word_perms = list(permutations(word))
@@ -22,4 +25,7 @@ def find_anagrams(word, wordlist=wordlist):
 
 
 word = "a"
-find_anagrams(word=word)
+try:
+    find_anagrams(word=word, wordlist=wordlist)
+except NameError:
+    print("No wordlist")
