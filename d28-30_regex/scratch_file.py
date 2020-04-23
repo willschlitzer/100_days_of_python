@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 
 def notRegex():
     """Shows examples of when not to use regex"""
@@ -25,7 +26,9 @@ def useFindall():
     # Script to search for words in title case
     # [A-Z] searches for a capital letter
     # [a-z0-9]+ searches for lowercase letters and numbers, and there can be multiple of them from the '+'
-    print(re.findall(r'[A-Z][a-z0-9]+', text))
+    #print(re.findall(r'[A-Z][a-z0-9]+', text))
+    cnt = Counter(re.findall(r'[A-Z][a-z0-9]+', text))
+    print(cnt.most_common(5))
 
 if __name__ == "__main__":
     #notRegex()
