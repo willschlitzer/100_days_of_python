@@ -51,9 +51,14 @@ def match_first_paragraph(html=HTML):
        'pybites != greedy' (= content of first paragraph).
        Return this string.
     """
-    pass
+    paragraph = re.findall(r"<p>[A-Za-z!=. ]+</p>", html)
+    #print(paragraph)
+    final_return = paragraph[0][3:-4]
+    return(final_return)
+    #print(final_return)
 
 
 if __name__ == "__main__":
     # extract_course_times(course=COURSE)
-    get_all_hashtags_and_links(tweet=TWEET)
+    #get_all_hashtags_and_links(tweet=TWEET)
+    match_first_paragraph()
