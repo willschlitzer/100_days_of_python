@@ -36,13 +36,14 @@ def get_all_hashtags_and_links(tweet=TWEET):
        Return this list.
     """
     hashes = re.findall(r"#[A-Za-z]+", tweet)
-    links = re.findall(r"[:A-Za-z./?#\-]+\.[A-Za-z./#?\-]+", tweet)
-    for hash in hashes:
-        strip_hash = hash.strip(' ')
-        links.append(strip_hash)
+    links = re.findall(r".*\.[A-Za-z]+", tweet)
+ #   for hash in hashes:
+ #       strip_hash = hash.strip(' ')
+ #       links.append(strip_hash)
     links += hashes
+    print(links)
     return links
-    #print(links)
+
 
 
 def match_first_paragraph(html=HTML):
@@ -60,5 +61,5 @@ def match_first_paragraph(html=HTML):
 
 if __name__ == "__main__":
     # extract_course_times(course=COURSE)
-    #get_all_hashtags_and_links(tweet=TWEET)
-    match_first_paragraph()
+    get_all_hashtags_and_links(tweet=TWEET)
+    #match_first_paragraph()
