@@ -36,13 +36,13 @@ def get_all_hashtags_and_links(tweet=TWEET):
        Return this list.
     """
     hashes = re.findall(r"#[A-Za-z]+", tweet)
-    links = re.findall(r"http://[A-Za-z./?\-]+", tweet)
+    links = re.findall(r"[:A-Za-z./?#\-]+\.[A-Za-z./#?\-]+", tweet)
     for hash in hashes:
         strip_hash = hash.strip(' ')
         links.append(strip_hash)
-    #links += hashes
-    #return links
-    print(links)
+    links += hashes
+    return links
+    #print(links)
 
 
 def match_first_paragraph(html=HTML):
